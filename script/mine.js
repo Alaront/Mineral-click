@@ -4,7 +4,8 @@
 let i_mineral_mine = 0;
 let mineral_mining = () => {
     let level_mine = person.building[0];
-
+    const engine = new Audio('./aud/click.mp3');
+    engine.play()
     //генерация размещения иконок
     let getRandPosition = () => {
         document.getElementsByClassName("minerals_icon")[i_mineral_mine].style.top = getRndInteger(-10, 50) + "px";

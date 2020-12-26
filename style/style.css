@@ -52,6 +52,14 @@ body{
     margin-right: 10px;
 }
 
+.header_game__resources .header_game__menu_aud{
+    position: relative;
+}
+
+.header_game__resources .header_game__menu_aud img{
+    position: absolute;
+}
+
 .header_game__resources p{
     font-size: 30px;
     font-family: 'Pangolin', cursive;

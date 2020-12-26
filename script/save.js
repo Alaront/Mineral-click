@@ -1,6 +1,9 @@
 
 //сохранения с помощью Localstorage
 document.getElementsByClassName('menu_element__button')[1].onclick = () => {
+    const engine = new Audio('./aud/click.mp3');
+    engine.play()
+
     let object_save = {
         save_person: person,
         save_mineral_object_ore: mineral_object_ore,
@@ -15,9 +18,15 @@ document.getElementsByClassName('menu_element__button')[1].onclick = () => {
 }
 
 document.getElementsByClassName('menu_element__button')[2].onclick = () => {
+    const engine = new Audio('./aud/click.mp3');
+    engine.play()
+
     document.getElementById('author_window').style.display = "block";
 }
 
 document.getElementsByClassName('menu_info__button')[0].onclick = () => {
+    const engine = new Audio('./aud/click.mp3');
+    engine.play()
+    
     document.getElementById('author_window').style.display = "none";
 }

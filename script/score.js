@@ -5,6 +5,9 @@ let quantity_icon = 0;
 let score_open = true;//запрет на обновление магазина если открыто окно магазина
 let arr_product = [];//массив товаров
 document.getElementsByClassName('building_blok')[7].onclick = () => {
+    const engine = new Audio('./aud/click.mp3');
+    engine.play()
+    
     score_open = false;
     document.getElementsByClassName('score_element__icon')[0].insertAdjacentHTML('afterbegin', '<div id="score_element__scroll"></div>');//это чтобы скролить
     document.getElementById('score_window').style.display = "block";//переводим в блок
@@ -26,7 +29,8 @@ document.getElementsByClassName('building_blok')[7].onclick = () => {
                 person.money -= arr_product[i].price;
                 tools_object[arr_product[i].id].quantity += 1;
                 document.getElementsByClassName('header_game__resources_money__info')[0].innerHTML = person.money; //обновили казну
-
+                const engine = new Audio('./aud/click.mp3');
+                engine.play()
             } else {
                 document.getElementsByClassName(`score_element__icon_${arr_product[i].id}`)[0].innerHTML += `<div id="warehouse_element__icon__error"><p>Сэр, у вы бедны</p></div`;
                 //удаление объекта из DOM
@@ -81,4 +85,6 @@ document.querySelector('.score_close').onclick = () => {
     score_icon_scroll = 0;
     quantity_icon = 0;
     score_open = true;
+    const engine = new Audio('./aud/click.mp3');
+    engine.play()
 };

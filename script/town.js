@@ -4,6 +4,9 @@
 let size_working_lim = 0;//количество рабочих возле ратуши
 let temp_arr_working = [];
 document.getElementsByClassName('building_blok')[6].onclick = () => {
+    const engine = new Audio('./aud/click.mp3');
+    engine.play()
+
     document.getElementsByClassName('town_hall_element_infastr')[0].insertAdjacentHTML('afterbegin', '<div id="town_hall_element__scroll__infastr"></div>')//это чтобы скролить
     document.getElementById('town_hall_window').style.display = "block"//переводим в блок
 
@@ -106,6 +109,8 @@ document.getElementsByClassName('building_blok')[6].onclick = () => {
                     } else {
                         document.getElementsByClassName(`blacksmith_element__icon__info_${arr_name[i]}`)[0].innerHTML = "Нужно науки для улучшения: Улучшено полностью";
                     }
+                    const engine = new Audio('./aud/click.mp3');
+                    engine.play()
                 } else {
                     document.getElementsByClassName(`blacksmith_element__icon__button_${arr_name[i]}`)[0].innerHTML += `<div id="town_hall_element__icon__error"><p>Сэр, у вас не хватает науки</p></div`;
                     setTimeout(() => {
@@ -267,4 +272,6 @@ document.querySelector('.town_hall_close').onclick = () => {
     icon_content[1].classList.remove('show');
     icon_content[0].classList.add('show');
 
+    const engine = new Audio('./aud/click.mp3');
+    engine.play()
 };

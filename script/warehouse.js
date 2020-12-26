@@ -2,6 +2,9 @@
 //открытие окна склада
 let quantity_in_stock = 0
 document.getElementsByClassName('building_blok')[4].onclick = () => {
+    const engine = new Audio('./aud/click.mp3');
+    engine.play()
+
     document.getElementsByClassName('warehouse_element__icon')[0].insertAdjacentHTML('afterbegin', '<div id="warehouse_element__scroll"></div>');//это чтобы скролить
     document.getElementById('warehouse_window').style.display = "block";//переводим в блок
 
@@ -94,6 +97,9 @@ document.getElementsByClassName('building_blok')[4].onclick = () => {
                     document.getElementsByClassName(`warehouse_element__icon__pole__ignot_${key}`)[0].value = ""; //обнулили содержимое строки
 
                     document.getElementsByClassName('header_game__resources_money__info')[0].innerHTML = person.money; //обновили казну
+                    const engine = new Audio('./aud/click.mp3');
+                    engine.play()
+
                 } else {
                     document.getElementsByClassName(`warehouse_element__icon__ingot_${key}`)[0].innerHTML += `<div id="warehouse_element__icon__error"><p>Сэр, у вас не хватает материалов для продажи</p></div`;
                     //удаление объекта из DOM
@@ -120,6 +126,9 @@ document.getElementsByClassName('building_blok')[4].onclick = () => {
                     document.getElementsByClassName(`warehouse_element__icon__pole__tools_${key}`)[0].value = ""; //обнулили содержимое строки
 
                     document.getElementsByClassName('header_game__resources_money__info')[0].innerHTML = person.money; //обновили казну
+                
+                    const engine = new Audio('./aud/click.mp3');
+                    engine.play()
                 } else {
                     document.getElementsByClassName(`warehouse_element__icon__tools_${key}`)[0].innerHTML += `<div id="warehouse_element__icon__error"><p>Сэр, у вас не хватает материалов для продажи</p></div`;
                     //удаление объекта из DOM
@@ -137,12 +146,18 @@ document.getElementsByClassName('building_blok')[4].onclick = () => {
 //событие прокрутки склада
 let warehouse_icon_scroll = 0;
 document.getElementsByClassName('warehouse_element__arrow')[0].onclick = () => {
+    const engine = new Audio('./aud/click.mp3');
+    engine.play()
+
     if (warehouse_icon_scroll < 0) {
         warehouse_icon_scroll += 150;
         document.getElementById('warehouse_element__scroll').style.marginLeft = warehouse_icon_scroll + 'px';
     }
 };
 document.getElementsByClassName('warehouse_element__arrow')[1].onclick = () => {
+    const engine = new Audio('./aud/click.mp3');
+    engine.play()
+
     if (warehouse_icon_scroll >= -1 * ((quantity_in_stock) * 170)) {
         warehouse_icon_scroll -= 150;
         document.getElementById('warehouse_element__scroll').style.marginLeft = warehouse_icon_scroll + 'px';
@@ -151,6 +166,9 @@ document.getElementsByClassName('warehouse_element__arrow')[1].onclick = () => {
 
 //закрытие окна склада
 document.querySelector('.widow_close').onclick = () => {
+    const engine = new Audio('./aud/click.mp3');
+    engine.play()
+    
     document.getElementById('warehouse_window').style.display = "none";//переводим состояние окна в none
     document.getElementsByClassName('warehouse_element__icon')[0].innerHTML = "";//чистим окно склада
     warehouse_icon_scroll = 0;

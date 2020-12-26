@@ -1,8 +1,11 @@
 //----kyzna-----\\
 let quantity_in_building = 0;
 document.getElementsByClassName('building_blok')[1].onclick = () => {
-    document.getElementsByClassName('blacksmith_element__icon')[0].insertAdjacentHTML('afterbegin', '<div id="building_element__scroll"></div>');//это чтобы скролить
-    document.getElementById('blacksmith_window').style.display = "block";//переводим в блок
+    const engine = new Audio('./aud/click.mp3');
+    engine.play()
+
+    document.getElementsByClassName('blacksmith_element__icon')[0].insertAdjacentHTML('afterbegin', '<div id="building_element__scroll"></div>'); //это чтобы скролить
+    document.getElementById('blacksmith_window').style.display = "block"; //переводим в блок
 
     //функции блоков с крафтом
     let craft = "";
@@ -92,7 +95,7 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
             document.getElementsByClassName('blacksmith_element__icon')[0].innerHTML += craft;
             quantity_in_building++
 
-            for (let i = 0; i <= 1; i++) {//цикличный вызов функция
+            for (let i = 0; i <= 1; i++) { //цикличный вызов функция
                 armor_craft(i);
                 document.getElementsByClassName('blacksmith_element__icon')[0].innerHTML += craft;
                 quantity_in_building++;
@@ -117,7 +120,7 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
             document.getElementsByClassName('blacksmith_element__icon')[0].innerHTML += craft;
             quantity_in_building++;
 
-            for (let i = 0; i <= 2; i++) {//цикличный вызов функция
+            for (let i = 0; i <= 2; i++) { //цикличный вызов функция
                 armor_craft(i);
                 document.getElementsByClassName('blacksmith_element__icon')[0].innerHTML += craft;
                 quantity_in_building++;
@@ -148,7 +151,7 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
                 quantity_in_building++;
             };
 
-            for (let i = 0; i <= 3; i++) {//цикличный вызов функция
+            for (let i = 0; i <= 3; i++) { //цикличный вызов функция
                 armor_craft(i);
                 document.getElementsByClassName('blacksmith_element__icon')[0].innerHTML += craft;
                 quantity_in_building++;
@@ -179,7 +182,7 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
                 quantity_in_building++;
             };
 
-            for (let i = 0; i <= 4; i++) {//цикличный вызов функция
+            for (let i = 0; i <= 4; i++) { //цикличный вызов функция
                 armor_craft(i);
                 document.getElementsByClassName('blacksmith_element__icon')[0].innerHTML += craft;
                 quantity_in_building++;
@@ -210,7 +213,7 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
                 quantity_in_building++;
             };
 
-            for (let i = 0; i <= 5; i++) {//цикличный вызов функция
+            for (let i = 0; i <= 5; i++) { //цикличный вызов функция
                 armor_craft(i);
                 document.getElementsByClassName('blacksmith_element__icon')[0].innerHTML += craft;
                 quantity_in_building++;
@@ -241,7 +244,7 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
                 quantity_in_building++;
             };
 
-            for (let i = 0; i <= 5; i++) {//цикличный вызов функция
+            for (let i = 0; i <= 5; i++) { //цикличный вызов функция
                 armor_craft(i);
                 document.getElementsByClassName('blacksmith_element__icon')[0].innerHTML += craft;
                 quantity_in_building++;
@@ -272,7 +275,7 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
                 quantity_in_building++;
             };
 
-            for (let i = 0; i <= 5; i++) {//цикличный вызов функция
+            for (let i = 0; i <= 5; i++) { //цикличный вызов функция
                 armor_craft(i);
                 document.getElementsByClassName('blacksmith_element__icon')[0].innerHTML += craft;
                 quantity_in_building++;
@@ -303,7 +306,7 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
                 quantity_in_building++;
             };
 
-            for (let i = 0; i <= 6; i++) {//цикличный вызов функция
+            for (let i = 0; i <= 6; i++) { //цикличный вызов функция
                 armor_craft(i);
                 document.getElementsByClassName('blacksmith_element__icon')[0].innerHTML += craft;
                 quantity_in_building++;
@@ -333,6 +336,8 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
 
                 mineral_object_ingot[name_res].quantity += mineral_value;
                 document.getElementsByClassName(`blacksmith_element__icon__pole__ingots_${name_res}`)[0].value = "";
+                const engine = new Audio('./aud/click.mp3');
+                engine.play()
             } else {
                 document.getElementsByClassName(`blacksmith_element__icon__button__ingots_${name_res}`)[0].innerHTML += `<div id="warehouse_element__icon__error"><p>Сэр, у вас не хватает материалов для создания</p></div`;
                 setTimeout(() => {
@@ -359,6 +364,8 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
 
                 tools_object[name_res].quantity += mineral_value;
                 document.getElementsByClassName(`blacksmith_element__icon__pole__${name_res}`)[0].value = "";
+                const engine = new Audio('./aud/click.mp3');
+                engine.play()
             } else {
                 document.getElementsByClassName(`blacksmith_element__icon__button__${name_res}`)[0].innerHTML += `<div id="warehouse_element__icon__error"><p>Сэр, у вас не хватает материалов для создания</p></div`;
                 setTimeout(() => {
@@ -391,6 +398,8 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
 
                 tools_object[name_res].quantity += mineral_value;
                 document.getElementsByClassName(`blacksmith_element__icon__pole__${name_res}`)[0].value = "";
+                const engine = new Audio('./aud/click.mp3');
+                engine.play()
             } else {
                 document.getElementsByClassName(`blacksmith_element__icon__button__${name_res}`)[0].innerHTML += `<div id="warehouse_element__icon__error"><p>Сэр, у вас не хватает материалов для создания</p></div`;
                 setTimeout(() => {
@@ -424,8 +433,8 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
         }
 
         document.getElementsByClassName(`blacksmith_element__icon__button__${name_res}`)[0].onclick = () => {
-            let temp_map = recipes_object.backpack[key].ingredients_map().keys();//ключи МАР
-            let temp_map_res = recipes_object.backpack[key].ingredients_map();//Временная переменная для хранения МАР
+            let temp_map = recipes_object.backpack[key].ingredients_map().keys(); //ключи МАР
+            let temp_map_res = recipes_object.backpack[key].ingredients_map(); //Временная переменная для хранения МАР
             let temp_iter1 = temp_map.next().value; //Повышаем итератор 1
             let temp_iter2 = temp_map.next().value; //Повышаем итератор 2
 
@@ -438,6 +447,8 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
 
                 tools_object[name_res].quantity += mineral_value;
                 document.getElementsByClassName(`blacksmith_element__icon__pole__${name_res}`)[0].value = "";
+                const engine = new Audio('./aud/click.mp3');
+                engine.play()
             } else {
                 document.getElementsByClassName(`blacksmith_element__icon__button__${name_res}`)[0].innerHTML += `<div id="warehouse_element__icon__error"><p>Сэр, у вас не хватает материалов для создания</p></div`;
                 setTimeout(() => {
@@ -454,8 +465,8 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
         let name_res = recipes_object.armor[key].name_img;
 
         document.getElementsByClassName(`blacksmith_element__icon__button__${name_res}`)[0].onclick = () => {
-            let temp_map = recipes_object.armor[key].ingredients_map().keys();//ключи МАР
-            let temp_map_res = recipes_object.armor[key].ingredients_map();//Временная переменная для хранения МАР
+            let temp_map = recipes_object.armor[key].ingredients_map().keys(); //ключи МАР
+            let temp_map_res = recipes_object.armor[key].ingredients_map(); //Временная переменная для хранения МАР
 
             if (temp_map_res.size <= 2) {
                 let temp_iter1 = temp_map.next().value; //Повышаем итератор 1
@@ -470,6 +481,8 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
 
                     tools_object[name_res].quantity += mineral_value;
                     document.getElementsByClassName(`blacksmith_element__icon__pole__${name_res}`)[0].value = "";
+                    const engine = new Audio('./aud/click.mp3');
+                    engine.play()
                 } else {
                     document.getElementsByClassName(`blacksmith_element__icon__button__${name_res}`)[0].innerHTML += `<div id="warehouse_element__icon__error"><p>Сэр, у вас не хватает материалов для создания</p></div`;
                     setTimeout(() => {
@@ -543,8 +556,10 @@ document.getElementsByClassName('blacksmith_element__arrow')[1].onclick = () => 
 
 //закрытие окна Кузни
 document.querySelector('.blacksmith_close').onclick = () => {
-    document.getElementById('blacksmith_window').style.display = "none";//переводим состояние окна в none
-    document.getElementsByClassName('blacksmith_element__icon')[0].innerHTML = "";//чистим окно
+    const engine = new Audio('./aud/click.mp3');
+    engine.play()
+    document.getElementById('blacksmith_window').style.display = "none"; //переводим состояние окна в none
+    document.getElementsByClassName('blacksmith_element__icon')[0].innerHTML = ""; //чистим окно
     building_element__scroll = 0;
-    quantity_in_building = 0;//обнуление
+    quantity_in_building = 0; //обнуление
 }

@@ -155,6 +155,9 @@ if (person.name == "") {
 
 //------menu------\\
 document.getElementById('header_game__menu__icon').onclick = () => {
+    const engine = new Audio('./aud/click.mp3');
+    engine.play()
+
     document.getElementById('menu_window').style.display = "block";
     if (person.training == false) {
         document.getElementsByClassName('eris_element__message')[0].innerHTML = "Это меню игры. Кнопка вернуться закроет окно, а кнопка авторы покажет список источников где была взята графика. Когда ты собираешься уйти, сохрани прогресс с помощью кнопки Сохранить.";
@@ -173,5 +176,8 @@ document.getElementById('header_game__menu__icon').onclick = () => {
 }
 
 document.getElementsByClassName('menu_element__button')[0].onclick = () => {
+    const engine = new Audio('./aud/click.mp3');
+    engine.play()
+    
     document.getElementById('menu_window').style.display = "none";
 }
