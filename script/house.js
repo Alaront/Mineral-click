@@ -2,8 +2,8 @@
 //открытие окна
 let quantity_in_house = -1;
 document.getElementsByClassName('building_blok')[5].onclick = () => {
-    const engine = new Audio('./aud/click.mp3');
-    engine.play()
+    soundClick(true)
+
     document.getElementsByClassName('house_element__icon')[0].insertAdjacentHTML('afterbegin', '<div id="house_element__scroll"></div>')//это чтобы скролить
     document.getElementById('house_window').style.display = "block"//переводим в блок
 
@@ -20,8 +20,7 @@ document.getElementsByClassName('building_blok')[5].onclick = () => {
 
     for (let j = 0; j < person.peopls_size; j++) {
         document.getElementsByClassName(`warehouse_element__icon__button__${j}`)[0].onclick = () => {
-            const engine = new Audio('./aud/click.mp3');
-    engine.play()
+            soundClick(true)
             arr_working[j] = 0;
             document.getElementsByClassName(`house_element__icon__${j}`)[0].innerHTML += '<div id="house_element__icon__error"><p>Уволен</p></div';
             //удаление из массива при закрытии окна
@@ -47,8 +46,8 @@ document.getElementsByClassName('house_element__arrow')[1].onclick = () => {
 
 //закрытие окна 
 document.querySelector('.house_close').onclick = () => {
-    const engine = new Audio('./aud/click.mp3');
-    engine.play()
+    soundClick(true)
+
     document.getElementById('house_window').style.display = "none"//переводим состояние окна в none
     document.getElementsByClassName('house_element__icon')[0].innerHTML = ""//чистим окно склада
     house_icon_scroll = 0;
@@ -63,8 +62,7 @@ document.querySelector('.house_close').onclick = () => {
             j--;
             person.peopls_size--;
             document.getElementsByClassName('header_game__resources_people__info')[0].innerHTML = person.peopls_size;
-            const engine = new Audio('./aud/click.mp3');
-    engine.play()
+            soundClick(true);
         }
     }
 };

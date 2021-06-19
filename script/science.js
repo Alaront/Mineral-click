@@ -2,8 +2,7 @@
 let i_science_mine = 0;
 document.getElementsByClassName('building_blok')[2].onclick = () => {
     let science_mine = person.building[2];
-    const engine = new Audio('./aud/click.mp3');
-    engine.play()
+    soundClick(true);
     
     //генерация размещения иконок
     let getRandPosition = () => {

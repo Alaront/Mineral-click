@@ -10,7 +10,7 @@ let arr_building = [1, 1, 1, 1, 1, 1]; //массив уровни зданий
 //
 
 //объект склад минералов руда
-let mineral_object_ore = {
+let mineral_object_ore = { 
     aluminum: {
         name: "Алюминий",
         price: 35,
@@ -258,6 +258,15 @@ let person = { //объект игрока
     peopls_size: 0
 }
 
+//объект настроек
+let settings = {
+    flagMainSound: false,
+    flagMainSoundVolume: 6,
+
+    flagClickSound: true,
+    flagClickSoundVolume: 6
+}
+
 //Если игра была сохранена, из localStorage возьмём данные и подставим куда нужно
 if (localStorage.getItem('person_save') != null) {
     let temp_save = localStorage.getItem('person_save');
@@ -269,6 +278,7 @@ if (localStorage.getItem('person_save') != null) {
     mineral_object_ingot = object_save.save_mineral_object_ingot;
     tools_object = object_save.save_tools_object;
     person = object_save.save_person;
+    settings = object_save.save_settings;
 
     person.workin = arr_working;
     person.building = arr_building;
@@ -326,6 +336,12 @@ for (let i = 0; i < 8; i++) {
     building_changes(i);
 };
 
+//отрисовка настроек
+settings.flagMainSound = false; 
+settings.flagClickSound = false;
+pointSound();
+pointSoundClick();
+
 //Функция количества денег, науки и рабочих
 let info_header_changes = () => {
     document.getElementsByClassName('header_game__resources_money__info')[0].innerHTML = person.money;
@@ -340,7 +356,7 @@ const recipes_object = {
     backpack: {
         level_forge_2: {
             name: 'Походный рюкзак',
-            ingredients: 'Кожа 1Х; Шерсть Х1',
+            ingredients: 'Кожа 1Х; Шерсть Х5',
             name_img: "backpack_1",
             ingredients_map: () => {
                 let map = new Map();

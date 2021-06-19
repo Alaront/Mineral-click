@@ -2,8 +2,7 @@
 //открытие окна склада
 let quantity_in_stock = 0
 document.getElementsByClassName('building_blok')[4].onclick = () => {
-    const engine = new Audio('./aud/click.mp3');
-    engine.play()
+    soundClick(true)
 
     document.getElementsByClassName('warehouse_element__icon')[0].insertAdjacentHTML('afterbegin', '<div id="warehouse_element__scroll"></div>');//это чтобы скролить
     document.getElementById('warehouse_window').style.display = "block";//переводим в блок
@@ -14,13 +13,18 @@ document.getElementsByClassName('building_blok')[4].onclick = () => {
         if (mineral_object_ore[key].quantity > 0) {
             quantity_in_stock++; //повышаем для количества
             document.getElementsByClassName('warehouse_element__icon')[0].innerHTML += `<div class='warehouse_element__icon__${key}'>
+            <div class='warehouse_content'>
             <img src="img/minerals/rez/ore/${key}.jpg" alt="photo">
             <p>Название: ${mineral_object_ore[key].name}</p>
+
             <p>Состояние: ${mineral_object_ore[key].state}</p>
             <p class="warehouse_element__icon__quantitys__${key}">Количество: ${mineral_object_ore[key].quantity}</p>
             <p>Цена: ${mineral_object_ore[key].price}</p>
+            </div>
+            <div class='warehouse_content'>
             <input class="warehouse_element__icon__pole__${key}" type="text" placeholder="Сколько">
             <button class="warehouse_element__icon__button__${key}">Продать</button>
+            </div>
             </div>`;
         };
     };
@@ -30,13 +34,17 @@ document.getElementsByClassName('building_blok')[4].onclick = () => {
         if (mineral_object_ingot[key].quantity > 0) {
             quantity_in_stock++;
             document.getElementsByClassName('warehouse_element__icon')[0].innerHTML += `<div class='warehouse_element__icon__ingot_${key}'>
+            <div class='warehouse_content'>
             <img src="img/minerals/rez/ingots/${key}.jpg" alt="photo">
             <p>Название: ${mineral_object_ingot[key].name}</p>
             <p>Состояние: ${mineral_object_ingot[key].state}</p>
             <p class="warehouse_element__icon__quantitys__ignot_${key}">Количество: ${mineral_object_ingot[key].quantity}</p>
             <p>Цена: ${mineral_object_ingot[key].price}</p>
+            </div>
+            <div class='warehouse_content'>
             <input class="warehouse_element__icon__pole__ignot_${key}" type="text" placeholder="Сколько">
             <button class="warehouse_element__icon__button__ignot_${key}">Продать</button>
+            </div>
             </div>`;
         };
     };
@@ -46,12 +54,16 @@ document.getElementsByClassName('building_blok')[4].onclick = () => {
         if (tools_object[key].quantity > 0) {
             quantity_in_stock++;
             document.getElementsByClassName('warehouse_element__icon')[0].innerHTML += `<div class='warehouse_element__icon__tools_${key}'>
+            <div class='warehouse_content'>
             <img src="img/tools/${key}.jpg" alt="photo">
             <p>Название: ${tools_object[key].name}</p>
             <p class="warehouse_element__icon__quantitys__tools_${key}">Количество: ${tools_object[key].quantity}</p>
             <p>Цена: ${tools_object[key].price}</p>
+            </div>
+            <div class='warehouse_content'>
             <input class="warehouse_element__icon__pole__tools_${key}" type="text" placeholder="Сколько">
             <button class="warehouse_element__icon__button__tools_${key}">Продать</button>
+            </div>
             </div>`;
         };
     };
@@ -71,6 +83,9 @@ document.getElementsByClassName('building_blok')[4].onclick = () => {
                     document.getElementsByClassName(`warehouse_element__icon__pole__${key}`)[0].value = ""; //обнулили содержимое строки
 
                     document.getElementsByClassName('header_game__resources_money__info')[0].innerHTML = person.money; //обновили казну
+
+                    
+                    soundClick(true, './aud/sale.mp3')
                 } else {
                     document.getElementsByClassName(`warehouse_element__icon__${key}`)[0].innerHTML += `<div id="warehouse_element__icon__error"><p>Сэр, у вас не хватает материалов для продажи</p></div`;
                     //удаление объекта из DOM
@@ -97,8 +112,9 @@ document.getElementsByClassName('building_blok')[4].onclick = () => {
                     document.getElementsByClassName(`warehouse_element__icon__pole__ignot_${key}`)[0].value = ""; //обнулили содержимое строки
 
                     document.getElementsByClassName('header_game__resources_money__info')[0].innerHTML = person.money; //обновили казну
-                    const engine = new Audio('./aud/click.mp3');
-                    engine.play()
+
+                    
+                    soundClick(true, './aud/sale.mp3')
 
                 } else {
                     document.getElementsByClassName(`warehouse_element__icon__ingot_${key}`)[0].innerHTML += `<div id="warehouse_element__icon__error"><p>Сэр, у вас не хватает материалов для продажи</p></div`;
@@ -127,8 +143,8 @@ document.getElementsByClassName('building_blok')[4].onclick = () => {
 
                     document.getElementsByClassName('header_game__resources_money__info')[0].innerHTML = person.money; //обновили казну
                 
-                    const engine = new Audio('./aud/click.mp3');
-                    engine.play()
+                    
+                    soundClick(true, './aud/sale.mp3')
                 } else {
                     document.getElementsByClassName(`warehouse_element__icon__tools_${key}`)[0].innerHTML += `<div id="warehouse_element__icon__error"><p>Сэр, у вас не хватает материалов для продажи</p></div`;
                     //удаление объекта из DOM
@@ -146,18 +162,12 @@ document.getElementsByClassName('building_blok')[4].onclick = () => {
 //событие прокрутки склада
 let warehouse_icon_scroll = 0;
 document.getElementsByClassName('warehouse_element__arrow')[0].onclick = () => {
-    const engine = new Audio('./aud/click.mp3');
-    engine.play()
-
     if (warehouse_icon_scroll < 0) {
         warehouse_icon_scroll += 150;
         document.getElementById('warehouse_element__scroll').style.marginLeft = warehouse_icon_scroll + 'px';
     }
 };
 document.getElementsByClassName('warehouse_element__arrow')[1].onclick = () => {
-    const engine = new Audio('./aud/click.mp3');
-    engine.play()
-
     if (warehouse_icon_scroll >= -1 * ((quantity_in_stock) * 170)) {
         warehouse_icon_scroll -= 150;
         document.getElementById('warehouse_element__scroll').style.marginLeft = warehouse_icon_scroll + 'px';
@@ -166,8 +176,7 @@ document.getElementsByClassName('warehouse_element__arrow')[1].onclick = () => {
 
 //закрытие окна склада
 document.querySelector('.widow_close').onclick = () => {
-    const engine = new Audio('./aud/click.mp3');
-    engine.play()
+    soundClick(true)
     
     document.getElementById('warehouse_window').style.display = "none";//переводим состояние окна в none
     document.getElementsByClassName('warehouse_element__icon')[0].innerHTML = "";//чистим окно склада

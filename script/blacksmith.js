@@ -1,8 +1,7 @@
 //----kyzna-----\\
 let quantity_in_building = 0;
 document.getElementsByClassName('building_blok')[1].onclick = () => {
-    const engine = new Audio('./aud/click.mp3');
-    engine.play()
+    soundClick(true)
 
     document.getElementsByClassName('blacksmith_element__icon')[0].insertAdjacentHTML('afterbegin', '<div id="building_element__scroll"></div>'); //это чтобы скролить
     document.getElementById('blacksmith_window').style.display = "block"; //переводим в блок
@@ -14,43 +13,62 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
     const ingots_arr = Object.keys(recipes_object.ingots);
     let ingots_craft = (i) => {
         craft = `<div class='blacksmith_element__icon__ingots_${recipes_object.ingots[ingots_arr[i]].name_resours}'>
+        <div class='blacksmith_content'>
         <img src="img/minerals/rez/ingots/${recipes_object.ingots[ingots_arr[i]].name_img}.jpg" alt="photo">
         <p>${recipes_object.ingots[ingots_arr[i]].name}</p>
         <p>Составная часть: <br>${recipes_object.ingots[ingots_arr[i]].ingredients}</p>
+        </div>
+        <div class='blacksmith_content'>
         <input class="blacksmith_element__icon__pole__ingots_${recipes_object.ingots[ingots_arr[i]].name_resours}" type="text" placeholder="Сколько">
+        
         <button class="blacksmith_element__icon__button__ingots_${recipes_object.ingots[ingots_arr[i]].name_resours}">Произвести</button>
+        </div>
         </div>`;
     };
     //icon pickaxe
     const pickaxe_arr = Object.keys(recipes_object.pickaxe);
     let pickaxe_craft = (i) => {
         craft = `<div class='blacksmith_element__icon__${recipes_object.pickaxe[pickaxe_arr[i]].name_img}'>
+        <div class='blacksmith_content'>
         <img src="img/tools/${recipes_object.pickaxe[pickaxe_arr[i]].name_img}.jpg" alt="photo">
         <p>${recipes_object.pickaxe[pickaxe_arr[i]].name}</p>
         <p>Составная часть: <br>${recipes_object.pickaxe[pickaxe_arr[i]].ingredients}</p>
+        </div>
+        <div class='blacksmith_content'>
         <input class="blacksmith_element__icon__pole__${recipes_object.pickaxe[pickaxe_arr[i]].name_img}" type="text" placeholder="Сколько">
+
         <button class="blacksmith_element__icon__button__${recipes_object.pickaxe[pickaxe_arr[i]].name_img}">Произвести</button>
+        </div>
         </div>`;
     };
     //icon sword
     const sword_arr = Object.keys(recipes_object.sword);
     let sword_craft = (i) => {
         craft = `<div class='blacksmith_element__icon__${recipes_object.sword[sword_arr[i]].name_img}'>
+        <div class='blacksmith_content'>
         <img src="img/tools/${recipes_object.sword[sword_arr[i]].name_img}.jpg" alt="photo">
         <p>${recipes_object.sword[sword_arr[i]].name}</p>
         <p>Составная часть: <br>${recipes_object.sword[sword_arr[i]].ingredients}</p>
+        </div>
+        <div class='blacksmith_content'>
         <input class="blacksmith_element__icon__pole__${recipes_object.sword[sword_arr[i]].name_img}" type="text" placeholder="Сколько">
         <button class="blacksmith_element__icon__button__${recipes_object.sword[sword_arr[i]].name_img}">Произвести</button>
+        </div>
         </div>`;
     };
     //icon backpack
     const backpack_arr = Object.keys(recipes_object.backpack);
     let backpack_craft = (i) => {
         craft = `<div class='blacksmith_element__icon__${recipes_object.backpack[backpack_arr[i]].name_img}'>
+        <div class='blacksmith_content'>
         <img src="img/tools/${recipes_object.backpack[backpack_arr[i]].name_img}.jpg" alt="photo">
         <p>${recipes_object.backpack[backpack_arr[i]].name}</p>
         <p>Составная часть: <br>${recipes_object.backpack[backpack_arr[i]].ingredients}</p>
+        
+        </div>
+        <div class='blacksmith_content'>
         <input class="blacksmith_element__icon__pole__${recipes_object.backpack[backpack_arr[i]].name_img}" type="text" placeholder="Сколько">
+
         <button class="blacksmith_element__icon__button__${recipes_object.backpack[backpack_arr[i]].name_img}">Произвести</button>
         </div>`;
     };
@@ -58,11 +76,19 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
     const armor_arr = Object.keys(recipes_object.armor);
     let armor_craft = (i) => {
         craft = `<div class='blacksmith_element__icon__${recipes_object.armor[armor_arr[i]].name_img}'>
+
+        <div class='blacksmith_content'>
         <img src="img/tools/${recipes_object.armor[armor_arr[i]].name_img}.jpg" alt="photo">
         <p>${recipes_object.armor[armor_arr[i]].name}</p>
+        
         <p>Составная часть: <br>${recipes_object.armor[armor_arr[i]].ingredients}</p>
+        </div>
+
+        <div class='blacksmith_content'>
         <input class="blacksmith_element__icon__pole__${recipes_object.armor[armor_arr[i]].name_img}" type="text" placeholder="Сколько">
         <button class="blacksmith_element__icon__button__${recipes_object.armor[armor_arr[i]].name_img}">Произвести</button>
+        </div>
+
         </div>`;
     };
 
@@ -336,8 +362,10 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
 
                 mineral_object_ingot[name_res].quantity += mineral_value;
                 document.getElementsByClassName(`blacksmith_element__icon__pole__ingots_${name_res}`)[0].value = "";
-                const engine = new Audio('./aud/click.mp3');
-                engine.play()
+               
+                
+                soundClick(true, './aud/craft.mp3')
+            
             } else {
                 document.getElementsByClassName(`blacksmith_element__icon__button__ingots_${name_res}`)[0].innerHTML += `<div id="warehouse_element__icon__error"><p>Сэр, у вас не хватает материалов для создания</p></div`;
                 setTimeout(() => {
@@ -364,8 +392,8 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
 
                 tools_object[name_res].quantity += mineral_value;
                 document.getElementsByClassName(`blacksmith_element__icon__pole__${name_res}`)[0].value = "";
-                const engine = new Audio('./aud/click.mp3');
-                engine.play()
+                
+                soundClick(true, './aud/craft.mp3')
             } else {
                 document.getElementsByClassName(`blacksmith_element__icon__button__${name_res}`)[0].innerHTML += `<div id="warehouse_element__icon__error"><p>Сэр, у вас не хватает материалов для создания</p></div`;
                 setTimeout(() => {
@@ -398,8 +426,8 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
 
                 tools_object[name_res].quantity += mineral_value;
                 document.getElementsByClassName(`blacksmith_element__icon__pole__${name_res}`)[0].value = "";
-                const engine = new Audio('./aud/click.mp3');
-                engine.play()
+                
+                soundClick(true, './aud/craft.mp3')
             } else {
                 document.getElementsByClassName(`blacksmith_element__icon__button__${name_res}`)[0].innerHTML += `<div id="warehouse_element__icon__error"><p>Сэр, у вас не хватает материалов для создания</p></div`;
                 setTimeout(() => {
@@ -447,8 +475,8 @@ document.getElementsByClassName('building_blok')[1].onclick = () => {
 
                 tools_object[name_res].quantity += mineral_value;
                 document.getElementsByClassName(`blacksmith_element__icon__pole__${name_res}`)[0].value = "";
-                const engine = new Audio('./aud/click.mp3');
-                engine.play()
+                
+                soundClick(true, './aud/craft.mp3')
             } else {
                 document.getElementsByClassName(`blacksmith_element__icon__button__${name_res}`)[0].innerHTML += `<div id="warehouse_element__icon__error"><p>Сэр, у вас не хватает материалов для создания</p></div`;
                 setTimeout(() => {
@@ -556,8 +584,9 @@ document.getElementsByClassName('blacksmith_element__arrow')[1].onclick = () => 
 
 //закрытие окна Кузни
 document.querySelector('.blacksmith_close').onclick = () => {
-    const engine = new Audio('./aud/click.mp3');
-    engine.play()
+
+    soundClick(true)
+
     document.getElementById('blacksmith_window').style.display = "none"; //переводим состояние окна в none
     document.getElementsByClassName('blacksmith_element__icon')[0].innerHTML = ""; //чистим окно
     building_element__scroll = 0;

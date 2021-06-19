@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/texture/logo.ico" ; type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="style/style.css">
+    <script src="script/sound.js" defer></script>
     <script src="script/script.js" defer></script>
     <script src="script/mine.js" defer></script>
-    <script src="script/warehouse.js" defer></script>
+    <script src="script/warehouse.js" defer></script> 
     <script src="script/blacksmith.js" defer></script>
     <script src="script/science.js" defer></script>
     <script src="script/house.js" defer></script>
@@ -16,10 +17,9 @@
     <script src="script/score.js" defer></script>
     <script src="script/training.js" defer></script>
     <script src="script/save.js" defer></script>
-    <script src="script/sound.js" defer></script>
     <title>MC</title>
 </head>
- 
+
 <body>
     <div class="game">
         <header id="header_game">
@@ -42,10 +42,6 @@
                 <div class="header_game__menu">
                     <img id="header_game__menu__icon" src="img/texture/menu.png" alt="photo">
                 </div>
-                 <div class="header_game__menu_aud">
-                    <img id="header_game__menu__icon_aud-on" style="display: none;" src="img/texture/aud_on.png" alt="photo">
-                    <img id="header_game__menu__icon_aud-off" style="display: block;" src="img/texture/aud_off.png" alt="photo">
-                </div> 
             </div>
         </header>
         <!--Окно Эрис-->
@@ -120,12 +116,73 @@
                 </div>
             </div>
         </div>
+
+        <!--Окно настроек-->
+        <div id="settings_window">
+            <div class="settings_element">
+                <p class="settings_element__titl">Настройки</p>
+
+                <div class="settings_element__main">
+                   
+                    <div class="settings_element__mainSound">
+                        <p>Главная мелодия</p>
+                        <div class="settings_audImg">
+                            <img id="settings_game__menu__icon_aud-on" src="img/texture/aud_on.png" alt="photo">
+                            <img id="settings_game__menu__icon_aud-off" src="img/texture/aud_off.png" alt="photo">
+                        </div>
+                    </div> 
+
+                    <div class="settings_element__settingsSound">
+                        <p>Громкость главной мелодии</p>
+                        <div class="settingsSound">
+                            <img id="settings_gameSound__less" src="img/texture/right.png" alt="right">
+                            <div>
+                                <span class="active"></span>
+                                <span class="active"></span>
+                                <span class="active"></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <img id="settings_gameSound__more" src="img/texture/left.png" alt="left">
+                        </div>
+                    </div>
+                   
+                    <div class="settings_element__gameSounds">
+                        <p>Звуки игры</p>
+                        <div class="settings_audImg">
+                            <img id="settings_game__gameSounds__icon_aud-on" src="img/texture/aud_on.png" alt="photo">
+                            <img id="settings_game__gameSounds_icon_aud-off" src="img/texture/aud_off.png" alt="photo">
+                        </div>
+                    </div> 
+
+                    <div class="settings_element__gameSoundsAud">
+                        <p>Громкость звуков</p>
+                        <div class="settingsSound">
+                            <img id="settings_gameSoundAud__less" src="img/texture/right.png" alt="right">
+                            <div>
+                                <span class="active"></span>
+                                <span class="active"></span>
+                                <span class="active"></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <img id="settings_gameSoundAud__more" src="img/texture/left.png" alt="left">
+                        </div>
+                    </div>
+
+                </div>
+
+                <p class="menu_info__button">Вернуться</p>
+            </div>
+        </div>
+
         <!--Окно Меню-->
         <div id="menu_window">
             <div class="menu_element">
                 <p class="menu_element__titl">МЕНЮ</p>
                 <p class="menu_element__button">Вернуться</p>
                 <p class="menu_element__button">Сохранить</p>
+                <p class="menu_element__button">Настройки</p>
                 <p class="menu_element__button">Авторы</p>
             </div>
             <div class="menu_info">
@@ -149,6 +206,7 @@
             <div class="warehouse_element">
                 <img class="warehouse_element__arrow" src="img/texture/right.png" alt="photo">
                 <div class="warehouse_element__icon">
+
                 </div>
                 <img class="warehouse_element__arrow" src="img/texture/left.png" alt="photo">
             </div>
@@ -162,6 +220,7 @@
             <div class="house_element">
                 <img class="house_element__arrow" src="img/texture/right.png" alt="photo">
                 <div class="house_element__icon">
+
                 </div>
                 <img class="house_element__arrow" src="img/texture/left.png" alt="photo">
             </div>
@@ -197,7 +256,9 @@
 
                     <div class="icon_content">
                         <img class="town_hall_element__arrow_infastr" src="img/texture/right.png" alt="photo">
+
                         <div class="town_hall_element_infastr">
+
                         </div>
 
                         <img class="town_hall_element__arrow_infastr" src="img/texture/left.png" alt="photo">
@@ -223,6 +284,7 @@
                 <img class="score_element__arrow" src="img/texture/left.png" alt="photo">
             </div>
         </div>
+
 
 
         <div class="parent">

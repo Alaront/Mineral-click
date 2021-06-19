@@ -1,97 +1,87 @@
-
 //------training------\\
+
+let cleanShow = (str) =>{
+    document.getElementById(str).style.boxShadow = "none";
+    document.getElementById(str).style.padding = "0";
+    document.getElementById(str).style.borderRadius = "0";
+}
+
+let addShow = (str) =>{
+    document.getElementById(str).style.boxShadow = "0px 0px 8px 6px rgba(154,47,29,1)";
+    document.getElementById(str).style.padding = "3px";
+    document.getElementById(str).style.borderRadius = "10px";
+}
+
 let instruction_one = () => {
-    document.getElementById('mine').style.boxShadow = "0px 0px 8px 6px rgba(154,47,29,1)";
-    document.getElementById('mine').style.padding = "3px";
-    document.getElementById('mine').style.borderRadius = "10px";
+    addShow('mine');
+
     document.getElementsByClassName('eris_element__message')[0].innerHTML = "Это шахта, сердце поселения. При клике на шахту будут добываться всяческие ресурсы, от простого угля и до очень редкого алерониума. Важно знать, что способность добыть важные ресурсы на прямую зависит от уровня шахты <br> Попробуй добыть чуть-чуть угля";
 }
 
 let instruction_two = () => {
     //убираем стили с прошлого раза
-    document.getElementById('mine').style.boxShadow = "none";
-    document.getElementById('mine').style.padding = "0";
-    document.getElementById('mine').style.borderRadius = "0";
+    cleanShow('mine');
 
-    document.getElementById('blacksmith').style.boxShadow = "0px 0px 8px 6px rgba(154,47,29,1)";
-    document.getElementById('blacksmith').style.padding = "3px";
-    document.getElementById('blacksmith').style.borderRadius = "10px";
+    addShow('blacksmith');
+
     document.getElementsByClassName('eris_element__message')[0].innerHTML = "Это кузня, тут ты можешь создавать изделия для продажи.";
 }
 
 let instruction_three = () => {
     //убираем стили с прошлого раза
-    document.getElementById('blacksmith').style.boxShadow = "none";
-    document.getElementById('blacksmith').style.padding = "0";
-    document.getElementById('blacksmith').style.borderRadius = "0";
+    cleanShow('blacksmith');
+    
+    addShow('laboratory');
 
-    document.getElementById('laboratory').style.boxShadow = "0px 0px 8px 6px rgba(154,47,29,1)";
-    document.getElementById('laboratory').style.padding = "3px";
-    document.getElementById('laboratory').style.borderRadius = "10px";
     document.getElementsByClassName('eris_element__message')[0].innerHTML = "Это лаборатория, нужна для добычи науки.";
 }
 
 let instruction_four = () => {
     //убираем стили с прошлого раза
-    document.getElementById('laboratory').style.boxShadow = "none";
-    document.getElementById('laboratory').style.padding = "0";
-    document.getElementById('laboratory').style.borderRadius = "0";
+    cleanShow('laboratory');
 
-    document.getElementById('warehouse').style.boxShadow = "0px 0px 8px 6px rgba(154,47,29,1)";
-    document.getElementById('warehouse').style.padding = "3px";
-    document.getElementById('warehouse').style.borderRadius = "10px";
+    addShow('warehouse');
+
     document.getElementsByClassName('eris_element__message')[0].innerHTML = "А это склад, тут хранятся твои ресурсы и изделия, а продать эти вещи можно прямо с него.";
 }
 
 let instruction_five = () => {
     //убираем стили с прошлого раза
-    document.getElementById('warehouse').style.boxShadow = "none";
-    document.getElementById('warehouse').style.padding = "0";
-    document.getElementById('warehouse').style.borderRadius = "0";
+    cleanShow('warehouse');
 
     document.getElementById('eris_window').style.right = "57%";
+    
+    addShow('town_hall');
 
-    document.getElementById('town_hall').style.boxShadow = "0px 0px 8px 6px rgba(154,47,29,1)";
-    document.getElementById('town_hall').style.padding = "3px";
-    document.getElementById('town_hall').style.borderRadius = "10px";
     document.getElementsByClassName('eris_element__message')[0].innerHTML = "Как ты понял, улучшения зданий имеет важную роль, а улучшать их можно прямо здесь в ратуше. Хочется упомянуть, что иногда к тебе могут приходить рабочие, они будут добывать минералы, но надо помнить, что в доме на всех места не хватит и рабочим нужно платить за их труды.";
 }
 
 let instruction_six = () => {
     //убираем стили с прошлого раза
-    document.getElementById('town_hall').style.boxShadow = "none";
-    document.getElementById('town_hall').style.padding = "0";
-    document.getElementById('town_hall').style.borderRadius = "0";
+    cleanShow('town_hall');
 
-    document.getElementById('score').style.boxShadow = "0px 0px 8px 6px rgba(154,47,29,1)";
-    document.getElementById('score').style.padding = "3px";
-    document.getElementById('score').style.borderRadius = "10px";
+    addShow('score');
+
     document.getElementsByClassName('eris_element__message')[0].innerHTML = "Иногда для создания некоторых вещей нужны особые материалы, которые проблематично добыть самому. Поэтому для этого есть магазин. Иногда там можно найти интересные товары по разным ценам.";
 }
 
 let instruction_seven = () => {
     //убираем стили с прошлого раза
-    document.getElementById('score').style.boxShadow = "none";
-    document.getElementById('score').style.padding = "0";
-    document.getElementById('score').style.borderRadius = "0";
+    cleanShow('score');
 
     document.getElementById('eris_window').style.right = "0%";
+    
+    addShow('house');
 
-    document.getElementById('house').style.boxShadow = "0px 0px 8px 6px rgba(154,47,29,1)";
-    document.getElementById('house').style.padding = "3px";
-    document.getElementById('house').style.borderRadius = "10px";
     document.getElementsByClassName('eris_element__message')[0].innerHTML = "Рабочие должны жить в доме, а значит его тоже нужно улучшать, чтобы рабочих было больше.";
 }
 
 let instruction_eight = () => {
     //убираем стили с прошлого раза
-    document.getElementById('house').style.boxShadow = "none";
-    document.getElementById('house').style.padding = "0";
-    document.getElementById('house').style.borderRadius = "0";
+    cleanShow('house');
 
-    document.getElementById('header_game__menu__icon').style.boxShadow = "0px 0px 8px 6px rgba(154,47,29,1)";
-    document.getElementById('header_game__menu__icon').style.padding = "3px";
-    document.getElementById('header_game__menu__icon').style.borderRadius = "10px";
+    addShow('header_game__menu__icon');
+
     document.getElementsByClassName('eris_element__message')[0].innerHTML = "Это кнопка меню, нажми на неё.";
 }
 
@@ -155,8 +145,7 @@ if (person.name == "") {
 
 //------menu------\\
 document.getElementById('header_game__menu__icon').onclick = () => {
-    const engine = new Audio('./aud/click.mp3');
-    engine.play()
+    soundClick(true)
 
     document.getElementById('menu_window').style.display = "block";
     if (person.training == false) {
@@ -168,16 +157,13 @@ document.getElementById('header_game__menu__icon').onclick = () => {
             document.getElementById('eris_window').style.display = "none";
             person.training = true;
 
-            document.getElementById('header_game__menu__icon').style.boxShadow = "none";
-            document.getElementById('header_game__menu__icon').style.padding = "0";
-            document.getElementById('header_game__menu__icon').style.borderRadius = "0";
+            cleanShow('header_game__menu__icon');
         }, 20000);
     }
 }
 
 document.getElementsByClassName('menu_element__button')[0].onclick = () => {
-    const engine = new Audio('./aud/click.mp3');
-    engine.play()
-    
+    soundClick(true)
+
     document.getElementById('menu_window').style.display = "none";
 }

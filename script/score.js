@@ -4,10 +4,10 @@ let score_in_stock = 0;
 let quantity_icon = 0;
 let score_open = true;//запрет на обновление магазина если открыто окно магазина
 let arr_product = [];//массив товаров
+
 document.getElementsByClassName('building_blok')[7].onclick = () => {
-    const engine = new Audio('./aud/click.mp3');
-    engine.play()
-    
+    soundClick(true)
+     
     score_open = false;
     document.getElementsByClassName('score_element__icon')[0].insertAdjacentHTML('afterbegin', '<div id="score_element__scroll"></div>');//это чтобы скролить
     document.getElementById('score_window').style.display = "block";//переводим в блок
@@ -16,10 +16,14 @@ document.getElementsByClassName('building_blok')[7].onclick = () => {
         quantity_icon++;
         document.getElementsByClassName('score_element__icon')[0].innerHTML += `
          <div class="score_element__icon_${arr_product[i].id}">
+            <div class="score_element__content">
             <span><img src="img/tools/${arr_product[i].id}.jpg" alt="photo"></span>
             <p>Название: ${arr_product[i].name}</p>
+            </div>
+            <div class="score_element__content">
             <p class="town_hall_element_messeg__info_priсe">Цена: ${arr_product[i].price}</p>
             <button id="town_hall_element_messeg__button_${arr_product[i].id}">Купить</button>
+            </div>
          </div>`;
     };
 
@@ -29,10 +33,12 @@ document.getElementsByClassName('building_blok')[7].onclick = () => {
                 person.money -= arr_product[i].price;
                 tools_object[arr_product[i].id].quantity += 1;
                 document.getElementsByClassName('header_game__resources_money__info')[0].innerHTML = person.money; //обновили казну
-                const engine = new Audio('./aud/click.mp3');
-                engine.play()
+
+                
+                soundClick(true, './aud/sale.mp3')
+                
             } else {
-                document.getElementsByClassName(`score_element__icon_${arr_product[i].id}`)[0].innerHTML += `<div id="warehouse_element__icon__error"><p>Сэр, у вы бедны</p></div`;
+                document.getElementsByClassName(`score_element__icon_${arr_product[i].id}`)[0].innerHTML += `<div id="warehouse_element__icon__error"><p>Сэр, вы бедны</p></div`;
                 //удаление объекта из DOM
                 //Запускаем асинхронную функцию и "откладываем" удаление на 1000ms помещая её в WebApis
                 setTimeout(() => {
@@ -44,11 +50,29 @@ document.getElementsByClassName('building_blok')[7].onclick = () => {
 
 };
 
+let pushStartGoods = (key) =>{
+    let temp = tools_object[key].price;
+    let product = {
+        id: key,
+        name: tools_object[key].name,
+        price: getRndInteger(temp, temp + 100)
+    }
+
+    return product
+}
+
 //генерация товаров
 let generation_product = setInterval(() => {
     if (score_open) {
         if (arr_product.length != 0) arr_product = [];//удалим если что-то уже есть
-        const keys_tools = ["skin", "wood", "bones", "wool"];
+
+        const keys_toolsStart = ["skin", "wood"];
+       for(let i = 0; i < 2; i++){
+            let product = pushStartGoods(keys_toolsStart[i]);
+            arr_product.push(product);
+       }
+
+        const keys_tools = ["bones", "wool"];
         for (let key of keys_tools) {
             if (getRndInteger(1, 10) % 2 == 0) {
                 let temp = tools_object[key].price;
@@ -61,7 +85,7 @@ let generation_product = setInterval(() => {
             };
         };
     };
-}, 200000);
+}, 10000);
 
 //событие прокрутки 
 let score_icon_scroll = 0;
@@ -85,6 +109,6 @@ document.querySelector('.score_close').onclick = () => {
     score_icon_scroll = 0;
     quantity_icon = 0;
     score_open = true;
-    const engine = new Audio('./aud/click.mp3');
-    engine.play()
+    
+    soundClick(true);
 };
