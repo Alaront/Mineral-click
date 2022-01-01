@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
 
 
-body{
+body {
     margin: 0;
     padding: 0;
     background-color: #999f42;
     cursor: url(../img/icon_cur/1.cur), auto;
 }
 
-.game{
+.game {
     width: 100%;
     height: 100vh;
     background-image: url(../img/fon/fon.jpg);
@@ -19,7 +19,7 @@ body{
     display: block;
 }
 
-#header_game{
+#header_game {
     background-image: url(../img/fon/fon_menu.jpg);
     width: 100%;
     height: 50px;
@@ -28,7 +28,7 @@ body{
     left: 0;
 }
 
-.header_game__resources{
+.header_game__resources {
     display: flex;
     justify-content: space-between;
     width: 80%;
@@ -36,7 +36,7 @@ body{
     margin-left: 10%;
 }
 
-.header_game__resources div{
+.header_game__resources div {
     width: 33%;
     margin: 0.5% 0;
     padding: 0%;
@@ -45,37 +45,34 @@ body{
     align-items: center;
 }
 
-.header_game__resources img{
-    width: 20%;
+.header_game__resources img {
+    width: 40px;
     margin: 0;
-    padding: 0%;
+    padding: 0;
     margin-right: 10px;
 }
 
-
-
-.header_game__resources p{
+.header_game__resources p {
     font-size: 30px;
     font-family: 'Pangolin', cursive;
     margin: 0;
     padding: 0;
 }
 
-#menu_window{
+#menu_window {
     position: absolute;
     display: none;
     width: 25%;
-    height: 60%;
     top: 20%;
     left: 37%;
-    z-index: 2;
+    z-index: 102;
     background-color: rgb(0, 110, 255);
     border: 5px solid rgb(3, 66, 148);
     border-radius: 5px;
     padding: 0.5%;
 }
 
-.menu_element{
+.menu_element {
     width: 80%;
     height: 80%;
     margin-left: 10%;
@@ -87,14 +84,14 @@ body{
     align-items: center;
 }
 
-.menu_element__titl{
+.menu_element__title {
     text-align: center;
     font-size: 35px;
     font-family: 'Pangolin', cursive;
     margin-bottom: 2%;
 }
 
-.menu_element__button{
+.menu_element__button {
     width: 80%;
     border: 5px solid rgb(9, 76, 163);
     padding: 3px;
@@ -103,21 +100,21 @@ body{
     margin: 2%;
 }
 
-.menu_info{
+.menu_info {
     width: 100%;
     height: 20%;
     display: flex;
     align-items: flex-end;
 }
 
-.menu_element__info{
+.menu_element__info {
     font-size: 15px;
     font-family: 'Pangolin', cursive;
     margin: 0%;
     padding: 0%;
 }
 
-#author_window{
+#author_window {
     position: absolute;
     display: none;
     width: 60%;
@@ -131,7 +128,7 @@ body{
     font-family: 'Pangolin', cursive;
 }
 
-.author_element{
+.author_element {
     padding: 2%;
     display: flex;
     justify-content: space-around;
@@ -139,7 +136,7 @@ body{
     align-items: center;
 }
 
-.author_element__titl{
+.menu_element__title {
     text-align: center;
     font-size: 35px;
     font-family: 'Pangolin', cursive;
@@ -147,26 +144,26 @@ body{
     padding: 0%;
 }
 
-.author_element a, li{
+.author_element a, li {
     font-size: 15px;
     font-family: 'Pangolin', cursive;
 }
 
-#settings_window{
+#settings_window {
     position: absolute;
     display: none;
     width: 60%;
     height: 80%;
     top: 10%;
     left: 20%;
-    z-index: 4;
+    z-index: 104;
     background-color: rgb(0, 110, 255);
     border: 5px solid rgb(3, 66, 148);
     font-size: 15px;
     font-family: 'Pangolin', cursive;
 }
 
-.settings_element{
+.settings_element {
     width: 100%;
     padding: 2%;
     display: flex;
@@ -175,11 +172,11 @@ body{
     align-items: center;
 }
 
-.settings_element__main{
+.settings_element__main {
     width: 50%;
 }
 
-.settings_element__titl{
+.settings_element__title {
     text-align: center;
     font-size: 35px;
     font-family: 'Pangolin', cursive;
@@ -187,25 +184,23 @@ body{
     padding: 0%;
 }
 
-
-.settings_element__mainSound{
+.settings_element__mainSound {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.settings_audImg{
+.settings_audImg {
     width: 12%;
     position: relative;
 }
 
-
-.settings_audImg img{
+.settings_audImg img {
     position: absolute;
     width: 100%;
 }
 
-.settings_element__settingsSound{
+.settings_element__settingsSound {
     margin-top: 5%;
     display: flex;
     flex-direction: row;
@@ -221,7 +216,7 @@ body{
     width: 40%;
 }
 
-.settings_element__settingsSound .settingsSound div{
+.settings_element__settingsSound .settingsSound div {
     width: 100%;
     height: 80%;
     display: flex;
@@ -230,7 +225,7 @@ body{
     align-items: flex-end;
 }
 
-.settings_element__settingsSound .settingsSound div span{
+.settings_element__settingsSound .settingsSound div span {
     display: block;
     width: 5px;
     background-color: rgba(59, 27, 1, 0.637);
@@ -238,43 +233,43 @@ body{
     border-radius: 2px;
 }
 
-.settings_element__settingsSound .settingsSound div .active{
+.settings_element__settingsSound .settingsSound div .active {
     background-color: rgba(0, 255, 34, 0.637);
 }
 
-.settings_element__settingsSound .settingsSound div span:nth-child(1){
+.settings_element__settingsSound .settingsSound div span:nth-child(1) {
     height: 20%;
 }
 
-.settings_element__settingsSound .settingsSound div span:nth-child(2){
+.settings_element__settingsSound .settingsSound div span:nth-child(2) {
     height: 40%;
 }
 
-.settings_element__settingsSound .settingsSound div span:nth-child(3){
+.settings_element__settingsSound .settingsSound div span:nth-child(3) {
     height: 60%;
 }
 
-.settings_element__settingsSound .settingsSound div span:nth-child(4){
+.settings_element__settingsSound .settingsSound div span:nth-child(4) {
     height: 80%;
 }
 
-.settings_element__settingsSound .settingsSound div span:nth-child(5){
+.settings_element__settingsSound .settingsSound div span:nth-child(5) {
     height: 100%;
 }
 
-.settings_element__settingsSound .settingsSound img{
+.settings_element__settingsSound .settingsSound img {
     display: block;
     width: 35%;
 }
 
-.settings_element__gameSounds{
+.settings_element__gameSounds {
     margin-top: 5%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.settings_element__gameSoundsAud{
+.settings_element__gameSoundsAud {
     margin-top: 5%;
     display: flex;
     flex-direction: row;
@@ -290,7 +285,7 @@ body{
     width: 40%;
 }
 
-.settings_element__gameSoundsAud .settingsSound div{
+.settings_element__gameSoundsAud .settingsSound div {
     width: 100%;
     height: 80%;
     display: flex;
@@ -299,7 +294,7 @@ body{
     align-items: flex-end;
 }
 
-.settings_element__gameSoundsAud .settingsSound div span{
+.settings_element__gameSoundsAud .settingsSound div span {
     display: block;
     width: 5px;
     background-color: rgba(59, 27, 1, 0.637);
@@ -307,38 +302,38 @@ body{
     border-radius: 2px;
 }
 
-.settings_element__gameSoundsAud .settingsSound div .active{
+.settings_element__gameSoundsAud .settingsSound div .active {
     background-color: rgba(0, 255, 34, 0.637);
 }
 
-.settings_element__gameSoundsAud .settingsSound div span:nth-child(1){
+.settings_element__gameSoundsAud .settingsSound div span:nth-child(1) {
     height: 20%;
 }
 
-.settings_element__gameSoundsAud .settingsSound div span:nth-child(2){
+.settings_element__gameSoundsAud .settingsSound div span:nth-child(2) {
     height: 40%;
 }
 
-.settings_element__gameSoundsAud .settingsSound div span:nth-child(3){
+.settings_element__gameSoundsAud .settingsSound div span:nth-child(3) {
     height: 60%;
 }
 
-.settings_element__gameSoundsAud .settingsSound div span:nth-child(4){
+.settings_element__gameSoundsAud .settingsSound div span:nth-child(4) {
     height: 80%;
 }
 
-.settings_element__gameSoundsAud .settingsSound div span:nth-child(5){
+.settings_element__gameSoundsAud .settingsSound div span:nth-child(5) {
     height: 100%;
 }
 
-.settings_element__gameSoundsAud .settingsSound img{
+.settings_element__gameSoundsAud .settingsSound img {
     display: block;
     width: 35%;
 }
 
 
 
-.menu_info__button{
+.menu_info__button {
     width: 50%;
     border: 5px solid rgb(8, 54, 114);
     padding: 3px;
@@ -347,15 +342,16 @@ body{
     margin: 2%;
 }
 
-#eris_window{
+#eris_window {
     position: absolute;
     width: 40%;
-    bottom: 0%;
-    right: 0%;
-    z-index: 3;
+    bottom: 0;
+    right: 0;
+    z-index: 103;
+    pointer-events: none;
 }
 
-.eris_element{
+.eris_element {
     width: 80%;
     display: flex;
     justify-content: end;
@@ -363,7 +359,7 @@ body{
     flex-direction: row;
 }
 
-.eris_element__message{
+.eris_element__message {
     width: 100%;
     background-color: rgba(190, 98, 22, 0.808);
     border: 5px solid rgba(116, 59, 12, 0.918);
@@ -373,12 +369,12 @@ body{
     text-align: center;
 }
 
-#eris_window img{
+#eris_window img {
     width: 35%;
-    margin: 1% 1% 0 1%;
+    margin: auto 2% 0% 2%;
 }
 
-#element__name{
+#element__name {
     position: absolute;
     display: none;
     width: 40%;
@@ -391,9 +387,10 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    z-index: 100
 }
 
-#mineral_name{
+#mineral_name {
     width: 60%;
     font-size: 30px;
     font-family: 'Pangolin', cursive;
@@ -402,7 +399,7 @@ body{
     padding: 1.5%;
 }
 
-#mineral_name__button{
+#mineral_name__button {
     width: 40%;
     font-size: 20px;
     font-family: 'Pangolin', cursive;
@@ -414,15 +411,14 @@ body{
 }
 
 
-@keyframes warehouse_window__bottom{
+@keyframes warehouse_window__bottom {
     0%{top: 7%;}
     100%{top: 10%;}
 }
 
-#warehouse_window{
+#warehouse_window {
     display: none;
     position: absolute;
-    height: 80%;
     width: 60%;
     top: 10%;
     left: 20%;
@@ -430,14 +426,16 @@ body{
     background-color: rgba(97, 71, 1, 0.918);
     z-index: 1;
     animation: warehouse_window__bottom 0.09s 1;
+    min-height: 385px;
+    padding-bottom: 15px;
 }
 
-.warehose_window__header{
+.warehose_window__header {
     display: flex;
     justify-items: center;
 }
 
-.widow_heading{
+.widow_heading {
     font-family: 'Neucha', cursive;
     font-size: 50px;
     text-align: center;
@@ -446,22 +444,22 @@ body{
     width: 90%;
 }
 
-.widow_close{
+.widow_close {
     text-align: end;
     width: 10%;
 }
 
-.warehouse_element{
+.warehouse_element {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.warehouse_element__arrow{
+.warehouse_element__arrow {
     width: 10%;
 }
 
-#warehouse_element__scroll{
+#warehouse_element__scroll {
     width: 0px;
     margin: 0px;
     padding: 0;
@@ -469,7 +467,7 @@ body{
     transition: 0.5s all;
 }
 
-.warehouse_element__icon{
+.warehouse_element__icon {
     width: 90%;
     margin-top: 2.5%;
     display: flex;
@@ -477,7 +475,7 @@ body{
     overflow: hidden;
 }
 
-.warehouse_element__icon div{
+.warehouse_element__icon div {
     width: 150px;
     padding: 10px;
     margin: 0 5px;
@@ -489,7 +487,7 @@ body{
 
 }
 
-.warehouse_element__icon div .warehouse_content{
+.warehouse_element__icon div .warehouse_content {
     width: 100%;
     padding: 0px;
     margin: 0;
@@ -498,7 +496,7 @@ body{
     display: block;
 }
 
-.warehouse_element__icon div p{
+.warehouse_element__icon div p {
     font-size: 20px;
     font-family: 'Pangolin', cursive;
     width: 150px;
@@ -506,13 +504,13 @@ body{
     margin: 5%;
 }
 
-.warehouse_element__icon div img{
+.warehouse_element__icon div img {
     width: 50%;
     display: block;
     margin: auto;
 }
 
-.warehouse_element__icon div input{
+.warehouse_element__icon div input {
     width: 90%;
     display: block;
     margin: auto;
@@ -520,7 +518,7 @@ body{
     font-family: 'Pangolin', cursive;
 }
 
-.warehouse_element__icon div button{
+.warehouse_element__icon div button {
     width: 70%;
     display: block;
     margin: 5% 15%;
@@ -531,7 +529,7 @@ body{
     cursor: url(../img/icon_cur/2.cur), auto;
 }
 
-#warehouse_element__icon__error{
+#warehouse_element__icon__error {
     width: 80%;
     border: 3px solid rgb(255, 94, 0);
     background-color: rgba(255, 94, 1, 0.801);
@@ -540,18 +538,15 @@ body{
     left: 0;
 }
 
-
-
-
-@keyframes blacksmith_window__bottom{
+@keyframes blacksmith_window__bottom {
     0%{top: 7%;}
     100%{top: 10%;}
 }
 
-#blacksmith_window{
+#blacksmith_window {
     display: none;
     position: absolute;
-    height: 80%;
+    min-height: 385px;
     width: 60%;
     top: 10%;
     left: 20%;
@@ -559,14 +554,15 @@ body{
     background-color: rgba(1, 70, 97, 0.911);
     z-index: 1;
     animation: blacksmith_window__bottom 0.09s 1;
+    padding-bottom: 5px;
 }
 
-.blacksmith_window__header{
+.blacksmith_window__header {
     display: flex;
     justify-items: center;
 }
 
-.blacksmith_heading{
+.blacksmith_heading {
     font-family: 'Neucha', cursive;
     font-size: 50px;
     text-align: center;
@@ -575,22 +571,22 @@ body{
     width: 90%;
 }
 
-.blacksmith_close{
+.blacksmith_close {
     text-align: end;
     width: 10%;
 }
 
-.blacksmith_element{
+.blacksmith_element {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.blacksmith_element__arrow{
+.blacksmith_element__arrow {
     width: 10%;
 }
 
-#building_element__scroll{
+#building_element__scroll {
     width: 0px;
     margin: 0px;
     padding: 0;
@@ -598,7 +594,7 @@ body{
     transition: 0.5s all;
 }
 
-.blacksmith_element__icon{
+.blacksmith_element__icon {
     width: 90%;
     margin-top: 2.5%;
     display: flex;
@@ -606,7 +602,7 @@ body{
     overflow: hidden;
 }
 
-.blacksmith_element__icon div{
+.blacksmith_element__icon div {
     width: 150px;
     padding: 10px;
     margin: 0 5px;
@@ -617,7 +613,7 @@ body{
     position: relative;
 }
 
-.blacksmith_element__icon div .blacksmith_content{
+.blacksmith_element__icon div .blacksmith_content {
     display: block;
     width: 100%;
     padding: 0px;
@@ -626,7 +622,7 @@ body{
     position: static;
 }
 
-.blacksmith_element__icon div p{
+.blacksmith_element__icon div p {
     font-size: 20px;
     font-family: 'Pangolin', cursive;
     width: 150px;
@@ -634,13 +630,13 @@ body{
     margin: 5%;
 }
 
-.blacksmith_element__icon div img{
+.blacksmith_element__icon div img {
     width: 50%;
     display: block;
     margin: auto;
 }
 
-.blacksmith_element__icon div input{
+.blacksmith_element__icon div input {
     width: 90%;
     display: block;
     margin: auto;
@@ -648,7 +644,7 @@ body{
     font-family: 'Pangolin', cursive;
 }
 
-.blacksmith_element__icon div button{
+.blacksmith_element__icon div button {
     width: 80%;
     display: block;
     margin: 5% 10%;
@@ -660,7 +656,7 @@ body{
 
 }
 
-#blacksmith_element__icon__error{
+#blacksmith_element__icon__error {
     width: 80%;
     border: 3px solid rgb(255, 94, 0);
     background-color: rgba(255, 94, 1, 0.801);
@@ -669,19 +665,15 @@ body{
     left: 0;
 }
 
-
-
-
-
-@keyframes blacksmith_window__bottom{
+@keyframes blacksmith_window__bottom {
     0%{top: 7%;}
     100%{top: 10%;}
 }
 
-#town_hall_window{
+#town_hall_window {
     display: none;
     position: absolute;
-    height: 80%;
+    min-height: 416px;
     width: 60%;
     top: 10%;
     left: 20%;
@@ -691,12 +683,12 @@ body{
     animation: blacksmith_window__bottom 0.09s 1;
 }
 
-.town_hall_window__header{
+.town_hall_window__header {
     display: flex;
     justify-items: center;
 }
 
-.town_hall_heading{
+.town_hall_heading {
     font-family: 'Neucha', cursive;
     font-size: 50px;
     text-align: center;
@@ -705,33 +697,33 @@ body{
     width: 90%;
 }
 
-.town_hall_close{
+.town_hall_close {
     text-align: end;
     width: 10%;
 }
 
-.town_hall_element{
+.town_hall_element {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.town_hall_element__arrow{
+.town_hall_element__arrow {
     width: 10%;
 }
 
-.icon_content{
+.icon_content {
     width: 105%;
     margin-top: 2.5%;
 }
 
-.town_hall_element__icon div{
+.town_hall_element__icon div {
     width: 100%;
     padding: 10px;
     margin: 0 5px;
 }
 
-.town_hall_element__icon div p{
+.town_hall_element__icon div p {
     font-size: 20px;
     font-family: 'Pangolin', cursive;
     width: 150px;
@@ -739,13 +731,13 @@ body{
     margin: 1%;
 }
 
-.town_hall_element__arrow_infastr, .town_hall_element__arrow_messeg{
+.town_hall_element__arrow_infastr, .town_hall_element__arrow_messeg {
     width: 10%;
     display: block;
     margin: auto;
 }
 
-.town_hall_element__icon div input{
+.town_hall_element__icon div input {
     width: 90%;
     display: block;
     margin: auto;
@@ -753,7 +745,7 @@ body{
     font-family: 'Pangolin', cursive;
 }
 
-.town_hall_element__icon div button{
+.town_hall_element__icon div button {
     width: 80%;
     display: block;
     margin: 5% 10%;
@@ -763,7 +755,7 @@ body{
     background-color: rgba(9, 92, 139, 0.685);
 }
 
-#town_hall_element__icon__error{
+#town_hall_element__icon__error {
     width: 80%;
     border: 3px solid rgb(255, 94, 0);
     background-color: rgba(255, 94, 1, 0.801);
@@ -772,21 +764,21 @@ body{
     left: 0;
 }
 
-.town_hall_element_infastr{
+.town_hall_element_infastr {
     width: 80%;
     height: 80%;
     display: flex;
     flex-direction: row;
     overflow: hidden;
 }
-.town_hall_element_messeg{
+.town_hall_element_messeg {
     width: 80%;
     display: flex;
     flex-direction: row;
     overflow: hidden;
 }
 
-#town_hall_element__scroll__infastr{
+#town_hall_element__scroll__infastr {
     width: 0;
     margin: 0;
     padding: 0;
@@ -794,8 +786,7 @@ body{
     transition: 0.5s all;
 }
 
-/*Вкладки*/
-#tabs #icon1, #icon2{
+#tabs #icon1, #icon2 {
     display: inline-block;
     width: 18%;
     position: relative;
@@ -805,7 +796,7 @@ body{
     cursor: url(../img/icon_cur/1.cur), auto;
 }
 
-#tabs .whiteborder{
+#tabs .whiteborder {
     border: 1px solid rgb(94, 233, 180);
     border-bottom: 1px solid rgb(94, 233, 180);
     border-radius: 3px 3px 0  0;
@@ -821,7 +812,7 @@ body{
     padding: 10px;
     border-radius: 0 0 3px 3px;
     display: flex;
-    
+
 }
 
 #tabs .hide {
@@ -831,16 +822,16 @@ body{
     display: flex;
 }
 
-.town_hall_element_infastr__block img{
+.town_hall_element_infastr__block img {
    width: 50%;
    margin-left: 25%;
 }
 
-.town_hall_element_infastr__block button{
+.town_hall_element_infastr__block button {
     cursor: url(../img/icon_cur/3.cur), auto;
 }
 
-.town_hall_element_infastr__block{
+.town_hall_element_infastr__block {
     border: 4px solid rgb(14, 75, 2);
     display: flex;
     justify-content: center;
@@ -848,23 +839,23 @@ body{
     flex-direction: column;
 }
 
-.town_hall_element__people{
+.town_hall_element__people {
     position: relative;
 }
 
-.town_hall_element__people .town_hall_element__people__full{
+.town_hall_element__people .town_hall_element__people__full {
     position: absolute;
     left: 60%;
     display: flex;
     flex-direction: row;
 }
 
-.town_hall_element__people .town_hall_element__people__full img{
+.town_hall_element__people .town_hall_element__people__full img {
     width: 90%;
     margin: 0;
     padding: 0;
 }
-#town_hall_element__icon__error{
+#town_hall_element__icon__error {
     width: 20%;
     border: 3px solid rgb(255, 94, 0);
     background-color: rgba(255, 94, 1, 0.801);
@@ -873,38 +864,38 @@ body{
     left: 38%;
 }
 
-.town_hall_element_messeg div{
+.town_hall_element_messeg div {
     margin: 0;
     padding: 0;
     width: 30%;
     border: 4px solid rgb(14, 75, 2);
 }
 
-.town_hall_element_messeg p{
+.town_hall_element_messeg p {
     text-align: center;
 }
 
-.town_hall_element_messeg img{
+.town_hall_element_messeg img {
     margin: 0;
     padding: 0;
     width: 60%;
     margin-left: 20%;
 }
 
-.town_hall_element_messeg button{
+.town_hall_element_messeg button {
     cursor: url(../img/icon_cur/2.cur), auto;
 }
 
 
-@keyframes house_window__bottom{
+@keyframes house_window__bottom {
     0%{top: 7%;}
     100%{top: 10%;}
 }
 
-#house_window{
+#house_window {
     display: none;
     position: absolute;
-    height: 70%;
+    min-height: 385px;
     width: 60%;
     top: 15%;
     left: 20%;
@@ -914,12 +905,12 @@ body{
     animation: house_window__bottom 0.09s 1;
 }
 
-.house_window__header{
+.house_window__header {
     display: flex;
     justify-items: center;
 }
 
-.house_heading{
+.house_heading {
     font-family: 'Neucha', cursive;
     font-size: 50px;
     text-align: center;
@@ -928,22 +919,22 @@ body{
     width: 90%;
 }
 
-.house_close{
+.house_close {
     text-align: end;
     width: 10%;
 }
 
-.house_element{
+.house_element {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.house_element__arrow{
+.house_element__arrow {
     width: 10%;
 }
 
-#house_element__scroll{
+#house_element__scroll {
     width: 0px;
     margin: 0px;
     padding: 0;
@@ -951,7 +942,7 @@ body{
     transition: 0.5s all;
 }
 
-.house_element__icon{
+.house_element__icon {
     width: 90%;
     margin-top: 2.5%;
     display: flex;
@@ -959,7 +950,7 @@ body{
     overflow: hidden;
 }
 
-.house_element__icon div{
+.house_element__icon div {
     width: 150px;
     padding: 10px;
     margin: 0 5px;
@@ -967,7 +958,7 @@ body{
     position: relative;
 }
 
-.house_element__icon div p{
+.house_element__icon div p {
     font-size: 20px;
     font-family: 'Pangolin', cursive;
     width: 150px;
@@ -975,13 +966,13 @@ body{
     margin: 5%;
 }
 
-.house_element__icon div img{
+.house_element__icon div img {
     width: 80%;
     display: block;
     margin: auto;
 }
 
-.house_element__icon div input{
+.house_element__icon div input {
     width: 90%;
     display: block;
     margin: auto;
@@ -989,7 +980,7 @@ body{
     font-family: 'Pangolin', cursive;
 }
 
-.house_element__icon div button{
+.house_element__icon div button {
     width: 70%;
     display: block;
     margin: 5% 15%;
@@ -1001,7 +992,7 @@ body{
     cursor: url(../img/icon_cur/2.cur), auto;
 }
 
-#house_element__icon__error{
+#house_element__icon__error {
     width: 80%;
     text-align: center;
     border: 3px solid #ff0000;
@@ -1011,25 +1002,22 @@ body{
     left: 0;
 }
 
-#house_element__icon__error p{
-    
+#house_element__icon__error p {
+
     padding: 0%;
     margin: 0%;
 }
 
 
-
-
-
-@keyframes score_window__bottom{
+@keyframes score_window__bottom {
     0%{top: 7%;}
     100%{top: 10%;}
 }
 
-#score_window{
+#score_window {
     display: none;
     position: absolute;
-    height: 60%;
+    min-height: 385px;
     width: 60%;
     top: 15%;
     left: 20%;
@@ -1039,12 +1027,12 @@ body{
     animation: score_window__bottom 0.09s 1;
 }
 
-.score_window__header{
+.score_window__header {
     display: flex;
     justify-items: center;
 }
 
-.score_heading{
+.score_heading {
     font-family: 'Neucha', cursive;
     font-size: 50px;
     text-align: center;
@@ -1053,22 +1041,22 @@ body{
     width: 90%;
 }
 
-.score_close{
+.score_close {
     text-align: end;
     width: 10%;
 }
 
-.score_element{
+.score_element {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.score_element__arrow{
+.score_element__arrow {
     width: 10%;
 }
 
-#score_element__scroll{
+#score_element__scroll {
     width: 0px;
     margin: 0px;
     padding: 0;
@@ -1076,7 +1064,7 @@ body{
     transition: 0.5s all;
 }
 
-.score_element__icon{
+.score_element__icon {
     width: 90%;
     margin-top: 2.5%;
     display: flex;
@@ -1084,7 +1072,7 @@ body{
     overflow: hidden;
 }
 
-.score_element__icon div{
+.score_element__icon div {
     width: 150px;
     padding: 10px;
     margin: 0 5px;
@@ -1095,7 +1083,7 @@ body{
     justify-content: space-between;
 }
 
-.score_element__icon .score_element__content{
+.score_element__icon .score_element__content {
     width: 100%;
     padding: 0%;
     margin: 0%;
@@ -1103,7 +1091,7 @@ body{
     position: static;
 }
 
-.score_element__icon div p{
+.score_element__icon div p {
     font-size: 20px;
     font-family: 'Pangolin', cursive;
     width: 150px;
@@ -1111,13 +1099,13 @@ body{
     margin: 5%;
 }
 
-.score_element__icon div img{
+.score_element__icon div img {
     width: 50%;
     display: block;
     margin: auto;
 }
 
-.score_element__icon div input{
+.score_element__icon div input {
     width: 90%;
     display: block;
     margin: auto;
@@ -1125,7 +1113,7 @@ body{
     font-family: 'Pangolin', cursive;
 }
 
-.score_element__icon div button{
+.score_element__icon div button {
     width: 70%;
     display: block;
     margin: 5% 15%;
@@ -1136,7 +1124,7 @@ body{
     cursor: url(../img/icon_cur/2.cur), auto;
 }
 
-#score_element__icon__error{
+#score_element__icon__error {
     width: 80%;
     border: 3px solid rgb(255, 94, 0);
     background-color: rgba(255, 94, 1, 0.801);
@@ -1145,38 +1133,36 @@ body{
     left: 0;
 }
 
-
-.parent{
+.parent {
     width: 50%;
     height: 70%;
     margin: auto;
     padding-top: 12%;
 }
 
-.children_1, .children_2{
+.children_1, .children_2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.children_1 img, .children_2 img{
+.children_1 img, .children_2 img {
     display: block;
     width: 10%;
     height: auto;
 }
 
-.building_blok img{
+.building_blok img {
     display: block;
     width: 90%;
     margin-left: 15%;
 }
 
-
 .minerals{
     position: relative;
 }
 
-.minerals img{
+.minerals img {
     text-align: center;
     width: 20%;
     position: absolute;
@@ -1184,11 +1170,11 @@ body{
     left: 0;
 }
 
-.science{
+.science {
     position: relative;
 }
 
-.science img{
+.science img {
     text-align: center;
     width: 20%;
     position: absolute;
